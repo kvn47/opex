@@ -35,13 +35,13 @@ RSpec.describe "Teams API" do
     end
   end
 
-  describe "PATCH /api/teams/:id" do
+  describe "PUT /api/teams/:id" do
     let(:team) { Team.create!(name: 'Team 1', location: 'location') }
     let(:new_name) { 'Team 2' }
     let(:params) { {team: {name: new_name}} }
 
     before do
-      patch "/api/teams/#{team.id}", headers: headers, params: params.to_json
+      put "/api/teams/#{team.id}", headers: headers, params: params.to_json
     end
 
     include_examples "successful request"

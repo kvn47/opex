@@ -1,1 +1,0 @@
-json.(@team, :name, :location, :logo)
